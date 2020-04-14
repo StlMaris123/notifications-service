@@ -14,6 +14,13 @@
   <strong>Body:</strong>
   <%= @forum.body %>
 </p>
+<%= form_for [ @forum, Comment.new] do |f| %>
+      <%= f.text_area :body, placeholder: "Add a comment" , class: 'form-control'%>
+      <%= f.submit "Add Comment", class: "btn btn-primary" %>
+    <% end %>
+<ul>
+<%= render partial: 'comments/comment', collection: @forum.comments %>
+</ul>
 
 <%= link_to 'Edit', edit_forum_path(@forum) %> |
 <%= link_to 'Back', forums_path %>
