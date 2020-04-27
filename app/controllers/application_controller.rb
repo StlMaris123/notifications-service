@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  before_action :find_current_user
+  # before_action :find_current_user
 
   private
 
