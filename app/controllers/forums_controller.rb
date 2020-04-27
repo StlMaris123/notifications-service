@@ -1,5 +1,7 @@
 class ForumsController < ApplicationController
   before_action :set_forum, only: [:show, :edit, :update, :destroy]
+  # before_action :find_user, only: [:create]
+
 
   # GET /forums
   # GET /forums.json
@@ -69,6 +71,9 @@ class ForumsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def forum_params
-      params.require(:forum).permit(:title, :body)
+      params.require(:forum).permit(:user_id, :title, :body)
+    end
+
+    def find_user
     end
 end
