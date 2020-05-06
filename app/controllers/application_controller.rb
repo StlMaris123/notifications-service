@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   private
 
   def find_current_user
+    binding.pry
     @current_user = User.find(session['warden&.user&.user&.key']&.first)
   end
 end
