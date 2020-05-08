@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
   private
 
   def find_current_user
-    @current_user = User.find(session['warden.user.user.key']&.first) if session['warden.user.user.key'].present?
+    @current_user = User.find(session['warden.user.user.key']&.first) #if session['warden.user.user.key'].present?
   end
 end
