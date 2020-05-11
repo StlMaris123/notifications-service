@@ -26,7 +26,7 @@ class ForumsController < ApplicationController
   # POST /forums
   # POST /forums.json
   def create
-    @forum = Forum.new(forum_params)
+    @forum = @user.forums.new(forum_params)
 
     respond_to do |format|
       if @forum.save
@@ -72,8 +72,5 @@ class ForumsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def forum_params
       params.require(:forum).permit(:user_id, :title, :body)
-    end
-
-    def find_user
-    end
+    end  
 end
