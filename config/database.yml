@@ -16,6 +16,10 @@ test:
 
 production:
   <<: *default
-  database: project_production
-  username: username
-  password: <%= ENV['PROJECT_DATABASE_PASSWORD'] %>
+  database: d4dvgnde7566iv
+  username: uzpxrcblxcujcz
+  password: a2f5e8cc10a0cc8af27ebeccaffc1378b2c7d7ff4b8e85c6e702f01e023b07aa
+  host: ec2-34-234-228-127.compute-1.amazonaws.com
+  port: 5432
+    # postgres://uzpxrcblxcujcz:a2f5e8cc10a0cc8af27ebeccaffc1378b2c7d7ff4b8e85c6e702f01e023b07aa@ec2-34-234-228-127.compute-1.amazonaws.com:5432/d4dvgnde7566iv
+  # scheme://username:password@host:port/database
