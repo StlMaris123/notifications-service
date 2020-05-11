@@ -4,8 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
   skip_before_action :verify_authenticity_token, if: :json_request?
 
-  before_action :find_current_user
-
   private
 
   def find_current_user
