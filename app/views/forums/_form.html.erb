@@ -21,6 +21,11 @@
     <%= form.text_area :body %>
   </div>
 
+   <div class="field">
+    <%= form.label :tags %>
+    <%= form.text_field :tag_list, value: @forum.send(:tag_list).to_s, placeholder: 'user comma separated values' %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

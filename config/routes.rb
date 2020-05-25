@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :forums do
     resources :comments
   end
+  resources :tags, only: [:index, :show]
+  get '/tagged', to: "forums#tagged", as: :tagged
 
   resources :comments do
     resources :comments

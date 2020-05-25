@@ -2,18 +2,20 @@
 
 <p>
   <strong>User:</strong>
-  <%= @forum.user_id %>
+  <%= @forum&.user&.nick_name %>
 </p>
 
 <p>
   <strong>Title:</strong>
-  <%= @forum.title %>
+  <%= @forum&.title %>
 </p>
 
 <p>
   <strong>Body:</strong>
-  <%= @forum.body %>
+  <%= @forum&.body %>
 </p>
+
+<div><%= @forum&.tag_list %></div>
 <%= form_for [ @forum, Comment.new] do |f| %>
       <%= f.text_area :body, placeholder: "Add a comment" , class: 'form-control'%>
       <%= f.submit "Add Comment", class: "btn btn-primary" %>

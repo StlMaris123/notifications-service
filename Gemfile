@@ -33,6 +33,7 @@ gem 'pry-remote'
 gem 'rails_12factor'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'acts-as-taggable-on'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

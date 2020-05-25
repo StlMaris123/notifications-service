@@ -53,6 +53,13 @@ class ForumsController < ApplicationController
     end
   end
 
+  def tagged
+    if params[:tag].present?
+      @forums = Forum.tagged_with(params[:tag])
+    else
+      @forums = Forum.all
+    end
+  end
   # DELETE /forums/1
   # DELETE /forums/1.json
   def destroy
@@ -66,11 +73,11 @@ class ForumsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_forum
-      @forum = Forum.find(params[:id])
+      @forum = Forum.find_by_id(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def forum_params
-      params.require(:forum).permit(:user_id, :title, :body)
+      params.require(:forum).permit(:user_id, :title, :body, :tag_list)
     end  
 end
