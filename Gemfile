@@ -31,8 +31,11 @@ gem 'redis'
 gem 'redis-session-store'
 gem 'pry-remote'
 gem 'rails_12factor'
+
 gem 'bootstrap'
 gem 'jquery-rails'
+gem "font-awesome-rails"
+
 gem 'acts-as-taggable-on'
 
 group :development, :test do

@@ -9,7 +9,9 @@ class CommentsController < ApplicationController
   def create
     @commentable.comments.build(comment_params)
     if @commentable.save
+      redirect_back(fallback_location: root_path)
     else
+      flash[:notice] = 'sorry could not '
     end
   end
 
@@ -23,4 +25,6 @@ class CommentsController < ApplicationController
     @commentable = Comment.find_by_id(params[:comment_id]) if params[:comment_id]
     @commentable = Forum.find_by_id(params[:forum_id]) if params[:forum_id]
   end
+
+  
 end

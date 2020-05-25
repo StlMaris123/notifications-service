@@ -1,28 +1,38 @@
 <p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-3">
+    <p>
+      <strong>User:</strong>
+      <%= @forum&.user&.nick_name %>
+    </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @forum&.user&.nick_name %>
-</p>
+    <p>
+      <strong>Title:</strong>
+      <%= @forum&.title %>
+    </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @forum&.title %>
-</p>
+    <p>
+      <strong>Body:</strong>
+      <%= @forum&.body %>
+    </p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @forum&.body %>
-</p>
+    <p>
+      <strong>Tags:</strong>
+      <%= @forum&.tag_list %>
+    </p>
 
-<div><%= @forum&.tag_list %></div>
-<%= form_for [ @forum, Comment.new] do |f| %>
-      <%= f.text_area :body, placeholder: "Add a comment" , class: 'form-control'%>
-      <%= f.submit "Add Comment", class: "btn btn-primary" %>
-    <% end %>
-<ul>
-<%= render partial: 'comments/comment', collection: @forum.comments %>
-</ul>
+    <div><%= @forum&.tag_list %></div>
+    <%= form_for [ @forum, Comment.new] do |f| %>
+          <%= f.text_area :body, placeholder: "Add a comment" , class: 'form-control'%>
+          <%= f.submit "Add Comment", class: "btn btn-primary" %>
+        <% end %>
+    <ul>
+    <%= render partial: 'comments/comment', collection: @forum.comments %>
+    </ul>
 
-<%= link_to 'Edit', edit_forum_path(@forum) %> |
-<%= link_to 'Back', forums_path %>
+
+    <%= link_to 'Edit', edit_forum_path(@forum) %> |
+    <%= link_to 'Back', forums_path %>
+  </div>
+
+</div>
