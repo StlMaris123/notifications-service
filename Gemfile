@@ -48,6 +48,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'pry-rails'
   gem 'pry-nav'
+  gem 'coveralls', require: false
 end
 
 group :development do
