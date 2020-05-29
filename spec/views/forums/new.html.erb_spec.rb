@@ -14,8 +14,6 @@ RSpec.describe "forums/new", type: :view do
 
     assert_select "form[action=?][method=?]", forums_path, "post" do
 
-      assert_select "input[name=?]", "forum[user_id]"
-
       assert_select "input[name=?]", "forum[title]"
 
       assert_select "textarea[name=?]", "forum[body]"
