@@ -7,7 +7,7 @@
       <%= link_to forum, class: "list-group-item list-group-item-action" do %>
         <div class="d-flex w-100 justify-content-between ">
           <h5 class="mb-1"><b><%= forum&.title %></b></h5>
-          <small><b></b>posted by: <%= forum&.user&.email %></small>
+          <small><b></b>posted by: <%= forum&.user&.nick_name %></small>
         </div>
         <p class="mb-1"><%= forum&.body %></p>
         <small><b>Tags: </b><%= forum&.tag_list %></small>            
